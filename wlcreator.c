@@ -23,7 +23,7 @@ const char* charset8 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$
 const char* charset9 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 const char* charset10 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 const char* charset11 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%*£_";
-const char* charset12 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%*£_01234567";
+const char* charset12 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%*£_0123456789";
 const char* charset13 = "0123456789!@#$%*£_";
 const char* charset14 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%*£_0123456789";
 
