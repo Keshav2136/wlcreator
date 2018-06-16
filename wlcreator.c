@@ -1,4 +1,4 @@
-// Wordlist Creator v1.0
+// Wordlist Creator v1.1
 // Coded by @thelinuxchoice
 // Github: github.com/thelinuxchoice/wlcreator
 // Sorry the shit code, it was made on "Legend Mode" using permute algorithm
@@ -23,14 +23,16 @@ const char* charset8 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$
 const char* charset9 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 const char* charset10 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 const char* charset11 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%*£_";
-const char* charset12 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%*£_0123456789";
+const char* charset12 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%*£_01234567";
 const char* charset13 = "0123456789!@#$%*£_";
 const char* charset14 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%*£_0123456789";
 
 
 
 char buffer[50];
-char chr[3], cap[3], num[3], spc[3];
+char chr[3], cap[3], num[3], spc[3], apatt[3];
+int patt = 0;
+char makepatt[32];
 void permute(int level) {
   const char* charset_ptr = charset;
   if(level == -1){
@@ -235,7 +237,7 @@ printf("| |/\\| | | |   | '__/ _ \\/ _` | __/ _ \\| '__| \n");
 printf("\\  /\\  / | \\__/\\ | |  __/ (_| | || (_) | |    \n");
 printf(" \\/  \\/|_|\\____/_|  \\___|\\__,_|\\__\\___/|_|    \n"); 
 printf("\n");
-  printf(":: Wordlist Creator v1.0 by @thelinuxchoice ::\n");
+  printf(":: Wordlist Creator v1.1 by @thelinuxchoice ::\n");
 
 
 if (argc <= 1) {
@@ -252,14 +254,33 @@ exit(1);
   scanf("%s",&num);
   printf("\n[*] Use Special Chars? [y/n]: ");
   scanf("%s",&spc);
-  printf("\n[*] Generating WordList...(It can take a long time)\n");
 
-//// y n n n
+
    if ((!strcmp(chr, "n") && (!strcmp(cap, "n")) && (!strcmp(num, "n")) && (!strcmp(spc, "n"))))
 {
    printf("[!] Wordlist not generated. Choose \"y\" for at least one option \n");
+   exit(1);
 }
 
+  printf("\n[*] Use Pattern? [y/n]: ");
+  scanf("%s",&apatt);
+
+   if ((!strcmp(apatt, "y"))) {
+
+    printf("\n1) pattern before string (E.g.: patternSTRING): \n");
+    printf("2) pattern after string (E.g.: STRINGpattern): \n");
+    printf("\n[*] Choose Pattern Mode: "); 
+    scanf("%d",&patt);
+    printf("[*] Type pattern (E.g.: admin): ");
+    scanf("%s",&makepatt);  
+}
+
+
+  printf("\n[*] Generating WordList...(It can take a long time)\n");
+
+
+
+//// y n n n
  if ((!strcmp(chr, "y") && (!strcmp(cap, "n")) && (!strcmp(num, "n")) && (!strcmp(spc, "n")))) {
     remove("wordlist.txt");
     setvbuf(stdout, NULL, _IONBF, 0);
@@ -288,7 +309,7 @@ exit(1);
 
     close(save_out);
     close(save_err);
-    printf("\n[*] Saved: wordlist.txt\n");  
+
   
   
 }
@@ -328,7 +349,7 @@ exit(1);
 
     close(save_out);
     close(save_err);
-    printf("\n[*] Saved: wordlist.txt\n");  
+
   
 }
 
@@ -361,7 +382,7 @@ exit(1);
 
     close(save_out);
     close(save_err);
-    printf("\n[*] Saved: wordlist.txt\n");  
+
   
   
 }
@@ -395,7 +416,7 @@ exit(1);
 
     close(save_out);
     close(save_err);
-    printf("\n[*] Saved: wordlist.txt\n");  
+
   
   
 }
@@ -430,7 +451,7 @@ exit(1);
 
     close(save_out);
     close(save_err);
-    printf("\n[*] Saved: wordlist.txt\n");  
+
   
   
 }
@@ -465,7 +486,7 @@ exit(1);
 
     close(save_out);
     close(save_err);
-    printf("\n[*] Saved: wordlist.txt\n");  
+
   
   
 }
@@ -501,7 +522,7 @@ exit(1);
 
     close(save_out);
     close(save_err);
-    printf("\n[*] Saved: wordlist.txt\n");  
+
   
   
 }
@@ -536,7 +557,7 @@ exit(1);
 
     close(save_out);
     close(save_err);
-    printf("\n[*] Saved: wordlist.txt\n");  
+
   
   
 }
@@ -570,7 +591,7 @@ exit(1);
 
     close(save_out);
     close(save_err);
-    printf("\n[*] Saved: wordlist.txt\n");  
+
     
 }
 
@@ -604,7 +625,7 @@ exit(1);
 
     close(save_out);
     close(save_err);
-    printf("\n[*] Saved: wordlist.txt\n");  
+
     
 }
 /// n n n y 2
@@ -637,7 +658,7 @@ exit(1);
 
     close(save_out);
     close(save_err);
-    printf("\n[*] Saved: wordlist.txt\n");  
+
     
 }
 
@@ -671,7 +692,7 @@ exit(1);
 
     close(save_out);
     close(save_err);
-    printf("\n[*] Saved: wordlist.txt\n");  
+
     
 }
 
@@ -705,7 +726,7 @@ exit(1);
 
     close(save_out);
     close(save_err);
-    printf("\n[*] Saved: wordlist.txt\n");  
+
     
 }
 
@@ -739,7 +760,7 @@ exit(1);
 
     close(save_out);
     close(save_err);
-    printf("\n[*] Saved: wordlist.txt\n");  
+
     
 }
 
@@ -773,7 +794,7 @@ exit(1);
 
     close(save_out);
     close(save_err);
-    printf("\n[*] Saved: wordlist.txt\n");  
+
   
   
 }
@@ -811,8 +832,64 @@ exit(1);
     printf("\n[*] Saved: wordlist.txt\n");  
     
 }
+  if ( patt == 1) {
+    FILE *fr, *fw;
+    char buffer[10000];
+    fr = fopen("wordlist.txt","rt");
+    if (fr == NULL) {
+        printf("Error opening input file\n");
+        return 1;
+    }
+    fw = fopen("wordlistp1.txt","wt");
+    if (fw==NULL) {
+        printf("Error opening output file\n");
+        fclose (fr);
+        return 1;
+    }
+    while (fgets(buffer, 10000, fr) != NULL) {
+        buffer [ strcspn(buffer, "\r\n") ] = 0;   // remove trailing newline etc
+        fprintf(fw, "%s%s\n", makepatt,buffer);
+    }
+    fclose(fw);
+    fclose(fr);
+    remove("wordlist.txt");
+    printf("\n[*] Saved: wordlistp1.txt\n");
+   
+
+}
+  else if (patt == 2) {
+
+    FILE *fr, *fw;
+    char buffer[10000];
+    fr = fopen("wordlist.txt","rt");
+    if (fr == NULL) {
+        printf("Error opening input file\n");
+        return 1;
+    }
+    fw = fopen("wordlistp2.txt","wt");
+    if (fw==NULL) {
+        printf("Error opening output file\n");
+        fclose (fr);
+        return 1;
+    }
+    while (fgets(buffer, 10000, fr) != NULL) {
+        buffer [ strcspn(buffer, "\r\n") ] = 0;   // remove trailing newline etc
+        fprintf(fw, "%s%s\n", buffer,makepatt);
+    }
+    fclose(fw);
+    fclose(fr);
+    remove("wordlist.txt");
+    printf("\n[*] Saved: wordlistp2.txt\n");
 
 
+
+}
+ 
+   if ((!strcmp(apatt, "n"))) {
+
+  printf("\n[*] Saved: wordlist.txt\n");
+}
+ 
 
   return 0;
 }
